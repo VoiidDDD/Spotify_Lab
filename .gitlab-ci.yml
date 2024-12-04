@@ -1,0 +1,16 @@
+include:
+  - local: 'ci-templates/.conditions.yml'
+  - local: 'ci-templates/.variables.yml'
+  - local: 'ci-templates/.sonarqube.yml'
+  - local: 'ci-templates/.reportPortal.yml'
+  - local: 'ci-templates/.setup.yml'
+  - local: 'ci-templates/.compile.yml'
+  - local: 'ci-templates/.tests.yml'
+
+image: mcr.microsoft.com/dotnet/sdk:8.0
+
+stages:
+  - setup
+  - analysis
+  - compile
+  - api-test
